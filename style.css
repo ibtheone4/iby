@@ -1,0 +1,95 @@
+:root {
+  --deep: #062a3f;
+  --sea: #0f6e8c;
+  --shallow: #7fd1d9;
+  --foam: #eef9fa;
+  --coral: #ff6b57;
+  --text: #0b2230;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--foam);
+}
+
+a:focus-visible, .button:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 3px;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 6vw;
+  background: var(--deep);
+}
+.logo { color: #fff; font-weight: 700; font-size: 1.2rem; text-decoration: none; }
+nav a { color: var(--shallow); margin-left: 1.5rem; text-decoration: none; }
+nav a:hover { color: #fff; }
+
+/* Hero */
+.hero {
+  padding: 8rem 6vw 7rem;
+  background: linear-gradient(180deg, var(--deep) 0%, var(--sea) 100%);
+  color: #fff;
+}
+.hero h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(2.4rem, 7vw, 5rem);
+  line-height: 1.05;
+  max-width: 14ch;
+  margin-bottom: 1.5rem;
+}
+.hero p { max-width: 52ch; margin-bottom: 2rem; font-size: 1.1rem; }
+
+.button {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background: var(--coral);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: transform 0.2s;
+}
+.button:hover { transform: translateY(-2px); }
+
+/* Sections */
+section { padding: 4rem 6vw; }
+h2 { font-family: Georgia, serif; font-size: 2rem; margin-bottom: 1.5rem; color: var(--deep); }
+
+.facts dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+.facts dt { font-weight: 700; color: var(--sea); }
+.facts dd { font-size: 1.2rem; }
+
+.sites { background: #fff; }
+.sites ul { list-style: none; max-width: 60ch; }
+.sites li { padding: 1rem 0; border-bottom: 1px solid var(--shallow); }
+.sites strong { display: block; color: var(--deep); }
+
+.protect { background: var(--deep); color: #fff; }
+.protect h2 { color: var(--shallow); }
+.protect p { max-width: 55ch; font-size: 1.15rem; }
+
+footer { padding: 1.5rem 6vw; text-align: center; font-size: 0.9rem; }
+
+@media (max-width: 600px) {
+  .hero { padding: 5rem 6vw 4rem; }
+  nav a { margin-left: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .button { transition: none; }
+}
